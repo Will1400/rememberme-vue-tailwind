@@ -1,10 +1,13 @@
 <template>
 	<li
+		v-if="resource"
 		class="bg-white rounded-lg p-6 w-full relative mb-5 shadow-md transition transform-gpu hover:scale-105 hover:shadow-xl cursor-pointer"
 	>
 		<div class="flex flex-row justify-between w-full">
-			<h2 class="font-bold text-gray-800 mb-4 text-2xl">{{ title }}</h2>
-			<button class="w-10 h-10">
+			<h2 class="font-bold text-gray-800 mb-4 text-2xl">
+				{{ resource.title }}
+			</h2>
+			<button class="w-10 h-10" @click="removeItem">
 				<span class="text-gray-400 hover:text-red-500">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -24,22 +27,26 @@
 			</button>
 		</div>
 		<p class="text-gray-500">
-			{{ description }}
+			{{ resource.description }}
 		</p>
 	</li>
 </template>
 
 <script>
 export default {
+	emits: ["remove-resource"],
 	props: {
-		title: {
-			type: String,
+		resource: {
+			type: Object,
 			required: true,
 		},
-		description: {
-			type: String,
-			required: true,
-		},
+	},
+	setup(props, context) {
+		function removeItem() {
+			context.emit("remove-resource", props.resource.id);
+		}
+
+		return { removeItem };
 	},
 };
 </script>

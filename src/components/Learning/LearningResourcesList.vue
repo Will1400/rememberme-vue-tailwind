@@ -1,25 +1,30 @@
 <template>
-	<ul>
-		<resource-item v-bind="item"></resource-item>
-		<resource-item v-bind="item"></resource-item>
-		<resource-item v-bind="item"></resource-item>
-		<resource-item v-bind="item"></resource-item>
-		<resource-item v-bind="item"></resource-item>
-		<resource-item v-bind="item"></resource-item>
+	<ul v-if="resources.length > 0">
+		<resource-item
+			v-for="resource in resources"
+			:key="resource.id"
+			:resource="resource"
+			@remove-resource="removeResource"
+		></resource-item>
 	</ul>
 </template>
 <script>
 import ResourceItem from "./ResourceItem.vue";
+import { useStore } from "vuex";
+import { computed } from "vue";
 export default {
 	components: { ResourceItem },
-	data() {
-		return {
-			item: {
-				title: "Title",
-				description:
-					"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, quos",
-			},
-		};
+	setup() {
+		const store = useStore();
+
+		const resources = computed(() => store.getters["getResources"]);
+		console.log(resources);
+
+		function removeResource(id) {
+			store.dispatch("removeResource", id);
+		}
+
+		return { resources, removeResource };
 	},
 };
 </script>
