@@ -1,9 +1,26 @@
 <template>
-	<li class="bg-white rounded-lg p-6 w-full relative mb-5 shadow-lg">
+	<li
+		class="bg-white rounded-lg p-6 w-full relative mb-5 shadow-md transition transform-gpu hover:scale-105 hover:shadow-xl cursor-pointer"
+	>
 		<div class="flex flex-row justify-between w-full">
 			<h2 class="font-bold text-gray-800 mb-4 text-2xl">{{ title }}</h2>
 			<button class="w-10 h-10">
-				<span class="text-center">x</span>
+				<span class="text-gray-400 hover:text-red-500">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+						width="24"
+						height="24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+						/></svg
+				></span>
 			</button>
 		</div>
 		<p class="text-gray-500">

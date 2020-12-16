@@ -13,7 +13,7 @@
 			<learning-resources-list></learning-resources-list>
 
 			<button
-				class="w-full h-20 rounded-lg border-dashed border-4 border-light-blue-500 hover:shadow-xl transition-colors hover:bg-blue-300 hover:border-blue-300 focus:outline-none text-center p-2 text-gray-400 hover:text-gray-900"
+				class="transform-gpu hover:scale-105 w-full h-20 rounded-lg border-dashed border-4 border-light-blue-500 hover:shadow-xl transition hover:bg-blue-200 hover:border-blue-200 focus:outline-none text-center p-2 text-gray-400 hover:text-gray-800"
 			>
 				Add Resource
 			</button>
