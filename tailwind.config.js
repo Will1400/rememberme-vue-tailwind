@@ -1,8 +1,14 @@
 module.exports = {
 	purge: [],
-	darkMode: false, // or 'media' or 'class'
+	darkMode: "media", // or 'media' or 'class'
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				gray: {
+					950: "#0d1018",
+				},
+			},
+		},
 	},
 	variants: {
 		extend: {},

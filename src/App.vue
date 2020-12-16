@@ -1,5 +1,7 @@
 <template>
-	<learning-resources></learning-resources>
+	<div class="">
+		<learning-resources></learning-resources>
+	</div>
 </template>
 
 <script>

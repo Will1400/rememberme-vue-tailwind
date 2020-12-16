@@ -1,14 +1,18 @@
 <template>
 	<li
 		v-if="resource"
-		class="bg-white rounded-lg p-6 w-full relative mb-5 shadow-md transition transform-gpu hover:scale-105 hover:shadow-xl cursor-pointer"
+		class="bg-white dark:bg-gray-900 rounded-lg p-6 w-full relative mb-5 shadow-md transition transform-gpu sm:hover:scale-105 hover:shadow-xl cursor-pointer"
 	>
 		<div class="flex flex-row justify-between w-full">
-			<h2 class="font-bold text-gray-800 mb-4 text-2xl">
+			<h2
+				class="font-bold text-gray-800 dark:text-gray-100 mb-4 text-2xl"
+			>
 				{{ resource.title }}
 			</h2>
 			<button class="w-10 h-10" @click="removeItem">
-				<span class="text-gray-400 hover:text-red-500">
+				<span
+					class="text-gray-400 hover:text-red-500 dark:hover:text-red-600"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
