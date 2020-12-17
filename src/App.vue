@@ -1,5 +1,5 @@
 <template>
-	<div class="">
+	<div>
 		<learning-resources></learning-resources>
 	</div>
 </template>
@@ -11,6 +11,9 @@ export default {
 	name: "App",
 	components: {
 		LearningResources,
+	},
+	mounted() {
+		document.body.classList.add("dark");
 	},
 };
 </script>

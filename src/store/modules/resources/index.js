@@ -21,10 +21,16 @@ export default {
 		removeResource(state, payload) {
 			state.resources = state.resources.filter((x) => x.id !== payload);
 		},
+		addResource(state, payload) {
+			state.resources.push(payload);
+		},
 	},
 	actions: {
 		removeResource(context, payload) {
 			context.commit("removeResource", payload);
+		},
+		addResource(context, payload) {
+			context.commit("addResource", payload);
 		},
 	},
 	getters: {
